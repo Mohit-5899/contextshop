@@ -42,30 +42,52 @@ The agent at Turn 5 knows: budget ($80-120), terrain (trail/muddy), brand prefer
 
 ## Setup
 
-### 1. Install dependencies
+### One-command setup (recommended)
 
 ```bash
+git clone https://github.com/Mohit-5899/contextshop.git
+cd contextshop
+bash setup.sh
+```
+
+The script will:
+1. Create a Python virtual environment
+2. Install all dependencies
+3. Prompt for credentials if no `.env` exists
+4. Generate product data and upload to Qdrant (~1 min)
+5. Launch the Streamlit UI at http://localhost:8501
+
+You need:
+- **Qdrant Cloud** — free cluster at https://cloud.qdrant.io
+- **OpenRouter** — free API key at https://openrouter.ai/keys
+
+---
+
+### Manual setup
+
+#### 1. Install dependencies
+
+```bash
+python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Configure environment
+#### 2. Configure environment
 
 ```bash
 cp .env.example .env
-# Fill in QDRANT_URL, QDRANT_API_KEY, ANTHROPIC_API_KEY
+# Fill in QDRANT_URL, QDRANT_API_KEY, OPENROUTER_API_KEY
 ```
 
-Get a free Qdrant Cloud cluster at https://cloud.qdrant.io
-
-### 3. Ingest data
+#### 3. Ingest data
 
 ```bash
 python -m src.ingest
 ```
 
-Downloads 5K Amazon Sports & Outdoors products from HuggingFace, embeds with FastEmbed (BAAI/bge-small-en-v1.5 dense + Qdrant/bm25 sparse), and upserts to Qdrant. First run takes ~3 minutes.
+Generates 5K synthetic Sports & Outdoors products, embeds with FastEmbed (BAAI/bge-small-en-v1.5 dense + Qdrant/bm25 sparse), and upserts to Qdrant. Takes ~1 minute.
 
-### 4. Run the demo
+#### 4. Run the demo
 
 ```bash
 python demo.py
