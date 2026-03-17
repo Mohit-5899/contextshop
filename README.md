@@ -3,6 +3,10 @@
 > A retail Q&A agent that self-improves its context over time using Qdrant.
 > Built for GenAI Zürich Hackathon 2026 — Qdrant Challenge.
 
+## Demo Video
+
+[![ContextShop Demo](https://img.youtube.com/vi/t6jTzIfWiWk/0.jpg)](https://youtu.be/t6jTzIfWiWk)
+
 ## Explain It Simply
 
 **Think of a new employee at a store.**
