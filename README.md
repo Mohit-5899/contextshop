@@ -3,6 +3,28 @@
 > A retail Q&A agent that self-improves its context over time using Qdrant.
 > Built for GenAI Zürich Hackathon 2026 — Qdrant Challenge.
 
+## Explain It Simply
+
+**Think of a new employee at a store.**
+
+On Day 1, a customer walks in and asks *"I need running shoes."* The employee has no idea who this person is — gives a generic answer, asks basic questions.
+
+By Day 5, the same customer walks in. The employee now remembers: *"Oh, it's you — waterproof, Nike, trail running, $100 budget."* They give a perfect answer instantly, without being asked again.
+
+**ContextShop does exactly this — but for an AI.**
+
+> *"Most AI assistants forget everything after every message. ContextShop remembers and gets smarter — using Qdrant to store what it learns about you."*
+
+**How?** Three things happen after every message:
+1. **It learns** — extracts facts like *"budget $100", "prefers Nike"* and saves them
+2. **It remembers** — compresses old conversation into a summary and saves it
+3. **It retrieves** — next time you ask, it pulls from the product catalog AND your saved preferences AND your conversation history all at once
+
+**What's context engineering?**
+> *"It's deciding what information to put in front of the AI at the right moment. The AI's intelligence is fixed — but what it knows in that moment determines how good its answer is. We engineered that information layer."*
+
+---
+
 ## The Thesis
 
 Context engineering quality = answer quality. Provable with numbers.
